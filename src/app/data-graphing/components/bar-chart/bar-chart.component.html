@@ -1,0 +1,28 @@
+<mat-chip-list [multiple]="false">
+  <ng-container *ngFor="let accessor of contactActivityAccessors" selected>
+    <mat-chip
+      #chip="matChip"
+      [selected]="false"
+      (click)="onChipSelected(accessor); chip.toggleSelected()"
+    >
+      {{ accessor.propertyName }}
+    </mat-chip>
+  </ng-container>
+</mat-chip-list>
+<ngx-charts-bar-vertical
+  (window:resize)="onResize($event)"
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="barChartData"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="false"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisTickFormatting]="formatDate"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [noBarWhenZero]="false"
+>
+</ngx-charts-bar-vertical>

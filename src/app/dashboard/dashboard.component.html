@@ -1,0 +1,70 @@
+<mat-grid-list cols="4" rowHeight="540px" gutterSize="20px">
+  <mat-grid-tile rowspan="1" colspan="3">
+    <mat-card
+      ><mat-card-content>
+        <app-stacked-bar-chart
+          [title]="''"
+          [yAxisLabel]="'Seconds'"
+          [actor]="agentZeroWithFewRecords"
+          [contactActivityAccessors]="stackedBarChartAgentAccessors"
+          (selectedProperties)="onSelectedPropertiesStackedBarChart($event)"
+        ></app-stacked-bar-chart
+      ></mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile rowspan="1" colspan="1">
+    <mat-card
+      ><mat-card-content>
+        <app-pie-chart
+          [actor]="agentZeroWithFewRecords"
+          [contactActivityAccessors]="stackedBarChartPieChartAccessors"
+        ></app-pie-chart> </mat-card-content
+    ></mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile rowspan="1" colspan="3">
+    <mat-card
+      ><mat-card-content
+        ><app-line-chart
+          [contactActivityAccessors]="departmentAccessors"
+          [actor]="departmentTwoWithALotOfRecords"
+          (selectedProperties)="onSelectedPropertiesLineChart($event)"
+        ></app-line-chart></mat-card-content
+    ></mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile rowspan="1" colspan="1">
+    <mat-card
+      ><mat-card-content>
+        <app-pie-chart
+          [actor]="departmentTwoWithALotOfRecords"
+          [contactActivityAccessors]="lineChartPieChartAccessors"
+        ></app-pie-chart> </mat-card-content
+    ></mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile rowspan="1" colspan="3">
+    <mat-card
+      ><mat-card-content>
+        <app-bar-chart
+          [actor]="agentZeroWithFewRecords"
+          [contactActivityAccessors]="barChartAccessors"
+          (selectedProperties)="onSelectedPropertiesBarChart($event)"
+        >
+        </app-bar-chart></mat-card-content
+    ></mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile rowspan="1" colspan="3">
+    <mat-card
+      ><mat-card-content>
+        <app-bar-chart
+          [actor]="departmentTwo"
+          [contactActivityAccessors]="barChartAccessorsDepartment"
+          (selectedProperties)="
+            onSelectedPropertiesBarChartForDepartment($event)
+          "
+        >
+        </app-bar-chart> </mat-card-content
+    ></mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

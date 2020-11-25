@@ -1,0 +1,28 @@
+<mat-chip-list [multiple]="true">
+  <ng-container *ngFor="let accessor of contactActivityAccessors" selected>
+    <mat-chip
+      #chip="matChip"
+      [selected]="true"
+      (click)="onChipSelected(accessor); chip.toggleSelected()"
+    >
+      {{ accessor.propertyName }}
+    </mat-chip>
+  </ng-container>
+</mat-chip-list>
+
+<ngx-charts-line-chart
+  (window:resize)="onResize($event)"
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="lineChartData"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [timeline]="timeline"
+>
+</ngx-charts-line-chart>

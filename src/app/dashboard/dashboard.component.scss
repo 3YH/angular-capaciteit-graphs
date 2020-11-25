@@ -1,0 +1,10 @@
+.mat-grid-list {
+  height: calc(100vh - 64px);
+
+  .mat-grid-tile {
+    .mat-card {
+      width: calc(100% - 45px);
+      height: calc(100% - 45px);
+    }
+  }
+}
